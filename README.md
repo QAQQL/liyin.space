@@ -9,6 +9,11 @@ liyin.space 星穹铁道成就网址
 
 ## 运行
 
+### Vercel 一键部署
+
+[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FQAQQL%2Fliyin.space&repository-name=SRAchievement)
+
+
 ### 运行环境
 
 ```
@@ -27,18 +32,3 @@ npm install
 ```
 npm run dev
 ```
-
-### 使用 cookie 导入成就功能说明
-你需要进入 `cookieServer` 文件夹额外执行以下步骤：
-
-1. 初始化 cookieServer （首次执行需要）
-```
-npm install
-```
-
-2. 启动服务
-```
-npm server.js
-```
-
-看到 `Server is running at http://localhost:20025` 即表示服务启动成功。
