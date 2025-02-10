@@ -36,7 +36,7 @@ export const getAchievements = async (cookie) => {
     const type = extractCookieValue(cookie, '_HYVUUID') !== null ? 'hoyolab' : 'mihoyo'
     const config = {
         hoyolab: {
-            url: '/hoyolab/event/character-activities/list', host: 'sg-public-api.heybox.com', origin: 'https://act.hoyolab.com', referer: 'https://act.hoyolab.com/'
+            url: '/hoyolab/event/rpgcultivate/achievement/list', host: 'sg-public-api.heybox.com', origin: 'https://act.hoyolab.com', referer: 'https://act.hoyolab.com/'
         }, mihoyo: {
             url: '/mihoyo/event/rpgcultivate/achievement/list', host: 'api-takumi.mihoyo.com', origin: 'https://act.mihoyo.com', referer: 'https://act.mihoyo.com/'
         }
