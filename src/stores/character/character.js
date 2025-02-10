@@ -90,16 +90,16 @@ export const useCharacterStore = defineStore('character', () => {
             name: "记忆",
         }
     }
-    
+
     const characters = ref({})
-    const characterDefaultAvatar = '/src/images/icon/characterIcon.png'
+    const characterDefaultAvatar = '/images/icon/characterIcon.png'
     const characterDefaultName = '角色'
 
     const initialCharactersInfo = async () => {
-        return fetch(`/src/jsons/CharacterInfo.json?v=${characterInfoVersion}`).then(response => response.json())
+        return fetch(`/jsons/CharacterInfo.json?v=${characterInfoVersion}`).then(response => response.json())
         .then(characterInfo => {
             characters.value = characterInfo
-            
+
             return characterInfo
         })
         .catch(error => {
@@ -147,7 +147,7 @@ export const useCharacterStore = defineStore('character', () => {
 
         let prefix = ''
 
-        if (char.version < 1.6 && char.name !== "藿藿") 
+        if (char.version < 1.6 && char.name !== "藿藿")
             prefix = 'https://upload-static.hoyoverse.com/'
 
         else if (["加拉赫", "花火", "砂金", "开拓者-同谐"].includes(char.name))
@@ -169,30 +169,30 @@ export const useCharacterStore = defineStore('character', () => {
     }
 
     const getCombatTypeAvatar = (combatTypeName) => {
-        return '/src/images/combatType/' + combatTypeName + '.png'
+        return '/images/combatType/' + combatTypeName + '.png'
     }
 
     const getPathAvatar = (pathName) => {
-        return '/src/images/path/' + pathName + '.png'
+        return '/images/path/' + pathName + '.png'
     }
 
     const getDarkPathAvatar = (pathName) => {
-        return '/src/images/path-dark/' + pathName + '.png'
+        return '/images/path-dark/' + pathName + '.png'
     }
 
     const getPathSmallAvatar = (pathName) => {
-        return '/src/images/smallPath/' + pathName + '.png'
+        return '/images/smallPath/' + pathName + '.png'
     }
 
     const getDarkPathSmallAvatar = (pathName) => {
-        return '/src/images/smallPath-dark/' + pathName + '.png'
+        return '/images/smallPath-dark/' + pathName + '.png'
     }
 
     const getStarAvatar = () => {
-        return '/src/images/star.png'
+        return '/images/star.png'
     }
 
-    return {  
+    return {
         combattypes,
         paths,
         characters,

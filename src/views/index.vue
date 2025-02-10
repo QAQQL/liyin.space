@@ -58,14 +58,14 @@ onMounted(async () => {
         <div class="ly-header-left">
             <div class="left-title">
                 <!-- 黎愔成就 -->
-                <img class='left-title-icon' src='@/images/icon.png'/>
+                <img class='left-title-icon' src='/images/icon.png'/>
             </div>
         </div>
         <div class="ly-header-right">
             <el-dropdown class="dropdown-user" :trigger="isMobile ? 'click' : 'hover'">
                 <div class="user-info">
                     <div class="user-avatar">
-                        <img :src='getCharacterAvatar(currentUserInfo?.avatar)' 
+                        <img :src='getCharacterAvatar(currentUserInfo?.avatar)'
                             :alt="getCharacterAvatarName(currentUserInfo?.avatar)">
                     </div>
                     <div class="user-content">
@@ -81,7 +81,7 @@ onMounted(async () => {
                         <div class="user-info" v-for="userInfo in userInfoList.list" :key="userInfo.tokenID"
                         @click="handleCurrentTokenWithoutImport(userInfo.tokenID)">
                             <div class="user-avatar">
-                                <img :src='getCharacterAvatar(userInfo?.avatar)' 
+                                <img :src='getCharacterAvatar(userInfo?.avatar)'
                                     :alt="getCharacterAvatarName(userInfo?.avatar)">
                             </div>
                             <div class="user-content">
@@ -101,7 +101,7 @@ onMounted(async () => {
                         </el-dropdown-item>
                     </el-dropdown-menu>
                 </template>
-            </el-dropdown> 
+            </el-dropdown>
         </div>
     </header>
 
@@ -109,10 +109,10 @@ onMounted(async () => {
         <RouterLink v-for="nav in navList" :to="`/${nav.value}`" :class="{'router-link-exact-active': route.path.split('/')[1] === nav.value}">
             <div class="nav-main">
                 <div class="nav-content">
-                    <img :src="`/src/images/icon/${nav.value}Icon.png`" alt="nav.name" v-if="route.path.split('/')[1] !== nav.value">
-                    <img :src="`/src/images/icon/${nav.value}DarkIcon.png`" :alt="nav.name" v-else-if="isDark">
-                    <img :src="`/src/images/icon/${nav.value}LightIcon.png`" :alt="nav.name" v-else-if="isMobile">
-                    <img :src="`/src/images/icon/${nav.value}Icon1.png`" :alt="nav.name" v-else>
+                    <img :src="`/images/icon/${nav.value}Icon.png`" alt="nav.name" v-if="route.path.split('/')[1] !== nav.value">
+                    <img :src="`/images/icon/${nav.value}DarkIcon.png`" :alt="nav.name" v-else-if="isDark">
+                    <img :src="`/images/icon/${nav.value}LightIcon.png`" :alt="nav.name" v-else-if="isMobile">
+                    <img :src="`/images/icon/${nav.value}Icon1.png`" :alt="nav.name" v-else>
                     <div class="nav-title">
                         {{nav.name}}
                     </div>
@@ -155,8 +155,8 @@ a {
     box-shadow: var(--liyin-header-left-box-shadow)
 }
 .left-title-icon{
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     filter: drop-shadow(0 0 0 #DBC291);
 }
@@ -195,7 +195,7 @@ a {
 }
 .user-content{
     width: 70px;
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
 }
 .user-name{
@@ -212,7 +212,7 @@ a {
 }
 .user-info:hover .user-uid{
     color: var(--el-color-primary);
-    
+
 }
 /* .user-arrow{
     color: var(--liyin-arrow-color)
@@ -305,7 +305,7 @@ a {
     }
     .user-content{
         width: 70px;
-        overflow: hidden; 
+        overflow: hidden;
         white-space: nowrap;
     }
     .user-name{
@@ -360,7 +360,7 @@ a {
     }
     .ly-main{
         padding: 50px 0 50px 0;
-        width: 100%; 
+        width: 100%;
         height: 100vh;
         box-sizing: border-box;
     }

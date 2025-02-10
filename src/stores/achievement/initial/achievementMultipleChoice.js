@@ -7,7 +7,7 @@ export const useAchievementMultipleChoiceStore = defineStore('achievementMultipl
     const multipleChoice = ref({})
 
     const initialAchievementMultipleChoice = async () => {
-        return fetch(`/src/jsons/MultipleChoice.json?v=${multipleChoiceVersion}`)
+        return fetch(`/jsons/MultipleChoice.json?v=${multipleChoiceVersion}`)
         .then(response => response.json())
         .then(data => {
             multipleChoice.value = data
@@ -18,7 +18,7 @@ export const useAchievementMultipleChoiceStore = defineStore('achievementMultipl
             throw error
         })
     }
-    
+
     return {
         multipleChoice,
         initialAchievementMultipleChoice,

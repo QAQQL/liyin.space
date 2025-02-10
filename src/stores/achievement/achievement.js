@@ -47,7 +47,7 @@ export const useAchievementStore = defineStore('achievement', () => {
     //初始化成就状态列表
     const initialAchievementsStatus = () => {
         const userAchievementList = findUserAchievementList()?.list ?? []
-        
+
         achievements.value.forEach(achievement => {
             const userAch_ = userAchievementList[achievement.AchievementID]
             // console.log(userAch_)
@@ -58,14 +58,14 @@ export const useAchievementStore = defineStore('achievement', () => {
             }
             else if(userAch_.status === 3 && achievement?.MultipleID) {
                 achievement.Status = userAch_.status
-                
+
                 multipleChoice.value[achievement.MultipleID].forEach(AchievementID => {
                     if(AchievementID !== achievement.AchievementID){
                         const ach_ = achievements.value.find(ach => ach.AchievementID === AchievementID)
                         if(ach_ && ach_.Status !== 2){
                             ach_.Status = 2
                             handleUserAchievementList(ach_.AchievementID, ach_.Status)
-                        } 
+                        }
                     }
                 })
             }
@@ -106,7 +106,7 @@ export const useAchievementStore = defineStore('achievement', () => {
     //初始化自定义暂不可获取
     const initialAchievementsCustomNotAchievedStatus = () => {
         const userCustomNotAchievedList = findUserCustomNotAchievedList()?.list ?? []
-        
+
         const isMultipleCustomNotAchievedList = []  // 已设为自定义暂不可获取的多选一成就 ID 列表
 
         achievements.value.forEach(achievement => {
@@ -140,8 +140,8 @@ export const useAchievementStore = defineStore('achievement', () => {
                         handleUserCustomNotAchievedList(ach_.AchievementID, ach_.CustomNotAchieved)
                     }
 
-                    isMultipleCustomNotAchievedList.push(AchievementID)                    
-                    
+                    isMultipleCustomNotAchievedList.push(AchievementID)
+
                     // 自定义暂不可获得，判断当前状态，若状态为非未完成状态则进行修正
                     if(ach_.Status !== 1){
                         ach_.Status = 1
@@ -191,7 +191,7 @@ export const useAchievementStore = defineStore('achievement', () => {
                         })
                     }
                 }
-    
+
                 achievements.value.push(new Achievement(value))
             })
 
@@ -209,7 +209,7 @@ export const useAchievementStore = defineStore('achievement', () => {
                         message: 'TEXTJOIN 数据存在异常，请及时检查',
                         type: 'error',
                     })
-                } 
+                }
             }
 
             initialMultipleChoice()
@@ -220,16 +220,16 @@ export const useAchievementStore = defineStore('achievement', () => {
             achievements.value.sort((a, b) => {
                 const SeriesPriorityA = achievementseries[a.SeriesID].Priority
                 const SeriesPriorityB = achievementseries[b.SeriesID].Priority
-                if (SeriesPriorityA !== SeriesPriorityB) 
-                    return SeriesPriorityB - SeriesPriorityA 
-                return b.Priority - a.Priority 
+                if (SeriesPriorityA !== SeriesPriorityB)
+                    return SeriesPriorityB - SeriesPriorityA
+                return b.Priority - a.Priority
             })
 
             achievementSeries.value.push(new AchievementSeries({
                 SeriesID: 0,
                 SeriesTitle: "ALL",
-                imagePath: "/src/images/series/achievement.png",
-                imageDarkPath: "/src/images/series-dark/achievement.png",
+                imagePath: "/images/series/achievement.png",
+                imageDarkPath: "/images/series-dark/achievement.png",
                 Priority: 10
             }, achievements.value))
             handleSelectVersionList(0, achievements.value)
@@ -241,7 +241,7 @@ export const useAchievementStore = defineStore('achievement', () => {
             })
 
             achievementSeries.value.sort((a, b) => {
-                return b.Priority - a.Priority 
+                return b.Priority - a.Priority
             })
 
             return Promise.resolve();
@@ -272,7 +272,7 @@ export const useAchievementStore = defineStore('achievement', () => {
                         if(ach_){
                             ach_.Status = 2
                             handleUserAchievementList(ach_.AchievementID, ach_.Status, save)
-                        } 
+                        }
                     }
                 })
             }
@@ -290,7 +290,7 @@ export const useAchievementStore = defineStore('achievement', () => {
                         if(ach_){
                             ach_.Status = 1
                             handleUserAchievementList(ach_.AchievementID, ach_.Status, save)
-                        } 
+                        }
                     }
                 })
             }
@@ -321,11 +321,11 @@ export const useAchievementStore = defineStore('achievement', () => {
 
                         ach_.CustomNotAchieved = true
                         handleUserCustomNotAchievedList(ach_.AchievementID, ach_.CustomNotAchieved)
-                    } 
+                    }
                 }
             })
         }
-    } 
+    }
 
     const AchievementCancelCustomNotAchieved = (achievement) => {
         if (achievement.Status !== 1) {
@@ -348,7 +348,7 @@ export const useAchievementStore = defineStore('achievement', () => {
 
                         ach_.CustomNotAchieved = false
                         handleUserCustomNotAchievedList(ach_.AchievementID, ach_.CustomNotAchieved)
-                    } 
+                    }
                 }
             })
         }
@@ -367,8 +367,8 @@ export const useAchievementStore = defineStore('achievement', () => {
         else return [achievement.AchievementTitle]
     }
 
-    return {  
-        StellarJadeImg, 
+    return {
+        StellarJadeImg,
         achievements,
         achievementSeries,
         initialAchievementsStatus,

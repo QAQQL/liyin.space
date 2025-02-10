@@ -8,7 +8,7 @@ export const useAchievementStrategyStore = defineStore('achievementStrategy', ()
     const strategyInfo = ref({})
 
     const initialAchievementStrategy = async () => {
-        return fetch(`/src/jsons/AchievementStrategy.json?v=${achievementStrategyVersion}`)
+        return fetch(`/jsons/AchievementStrategy.json?v=${achievementStrategyVersion}`)
         .then(response => response.json())
         .then(data => {
             achievementStrategy.value = data
@@ -21,7 +21,7 @@ export const useAchievementStrategyStore = defineStore('achievementStrategy', ()
     }
 
     const initialStrategyInfo = async () => {
-        return fetch(`/src/jsons/StrategyInfo.json?v=${strategyInfoVersion}`)
+        return fetch(`/jsons/StrategyInfo.json?v=${strategyInfoVersion}`)
         .then(response => response.json())
         .then(data => {
             strategyInfo.value = data
@@ -32,7 +32,7 @@ export const useAchievementStrategyStore = defineStore('achievementStrategy', ()
             throw error
         })
     }
-    
+
     return {
         achievementStrategy,
         strategyInfo,

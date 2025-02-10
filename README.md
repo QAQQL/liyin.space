@@ -11,7 +11,7 @@ liyin.space 星穹铁道成就网址
 
 ### Vercel 一键部署
 
-[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FQAQQL%2Fliyin.space&repository-name=SRAchievement)
+[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FQAQQL%2Fliyin.space&project-name=sr_achievement)
 
 
 ### 运行环境

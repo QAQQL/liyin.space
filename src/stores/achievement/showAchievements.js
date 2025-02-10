@@ -21,7 +21,7 @@ export const useShowAchievementsStore = defineStore('showAchievements', () => {
                 }
                 else if(showHiddenType.value === 'unhidden'){
                     if(achievement.isHidden)
-                        return false                    
+                        return false
                 }
             }
 
@@ -33,11 +33,11 @@ export const useShowAchievementsStore = defineStore('showAchievements', () => {
                 }
                 else if(showRewardType.value === 'silver'){
                     if(achievement.Rarity !== "Mid")
-                        return false                    
+                        return false
                 }
                 else if(showRewardType.value === 'copper'){
                     if(achievement.Rarity !== "Low")
-                        return false                    
+                        return false
                 }
             }
 
@@ -81,9 +81,9 @@ export const useShowAchievementsStore = defineStore('showAchievements', () => {
             if(showVersionList.value.length > 0)
                 if(!showVersionList.value.includes(achievement.Version))
                     return false
-                
+
             //搜索框筛选
-            if(!achievement.AchievementTitle.includes(searchContent.value) && 
+            if(!achievement.AchievementTitle.includes(searchContent.value) &&
             !achievement.AchievementDesc.replace(/<br>/g, '').replace(/<div style="color:#8790abff;">/g,'').replace(/<\/div>/g, '').includes(searchContent.value))
                 return false
 
@@ -104,14 +104,14 @@ export const useShowAchievementsStore = defineStore('showAchievements', () => {
         new AchievementSeries({
             SeriesID: 99,
             SeriesTitle: "本页成就",
-            imagePath: "/src/images/series/achievement.png",
-            imageDarkPath: "/src/images/series-dark/achievement.png",
+            imagePath: "/images/series/achievement.png",
+            imageDarkPath: "/images/series-dark/achievement.png",
             Priority: -1
         }, showAchievements.value)
     )
 
     watch(showAchievements, () => showAchievementSeries.value.updateAchievements(showAchievements.value))
-    
+
     return {
         showAchievements,
         showAchievementSeries

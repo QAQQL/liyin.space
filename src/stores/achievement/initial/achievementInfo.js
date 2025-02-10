@@ -7,7 +7,7 @@ export const useAchievementInfoStore = defineStore('achievementInfo', () => {
     const achievementInfo = ref({})
 
     const initialAchievementInfo = async () => {
-        return fetch(`/src/jsons/AchievementInfo.json?v=${achievementInfoVersion}`)
+        return fetch(`/jsons/AchievementInfo.json?v=${achievementInfoVersion}`)
         .then(response => response.json())
         .then(data => {
             achievementInfo.value = data
@@ -18,7 +18,7 @@ export const useAchievementInfoStore = defineStore('achievementInfo', () => {
             throw error
         })
     }
-    
+
     return {
         achievementInfo,
         initialAchievementInfo,
